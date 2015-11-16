@@ -14,13 +14,13 @@ namespace AdaMovieStoreSample.Tests
         [TestMethod]
         public void Get_all_should_return_3_results()
         {
-            IMovieRepository repository = CreateRepository();
+            MovieRepository repository = CreateRepository();
 
             var movies = repository.GetAll();
             Assert.IsTrue(movies.Count == 3);
         }
 
-        private IMovieRepository CreateRepository()
+        private MovieRepository CreateRepository()
         {
             return new MovieRepository();
         }

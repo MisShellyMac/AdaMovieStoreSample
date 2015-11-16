@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Movie Detail";
+    Layout = "~/Views/Shared/_ngLayout.cshtml";
+}
+
+<h2>Movie Detail</h2>
+<div ng-controller="MovieController">
+    <div>Id: {{movie.Id}}</div>
+    <div>Title: {{movie.Title}}</div>
+    <div>Overview: {{movie.Overview}}</div>
+    <div>Release Date: {{movie.ReleaseDate}}</div>
+    <div>Inventory: {{movie.Inventory}}</div>
+</div>
+@section scripts
+{
+    <script>
+    var app = angular.module("movieStore");
+    app.controller("MovieController", function($scope, $http) {
+
+        var onMovieComplete = function(response) {
+            $scope.movie = response.data;
+        };
+
+        $http.get("/api/movies/@ViewBag.id")
+            .then(onMovieComplete);
+
+    });
+    </script>
+}
+
+

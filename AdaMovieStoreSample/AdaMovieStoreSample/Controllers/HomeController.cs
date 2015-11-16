@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AdaMovieStoreSample.DataLayer;
+using AdaMovieStoreSample.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,5 +17,30 @@ namespace AdaMovieStoreSample.Controllers
             return View();
         }
 
+        public ActionResult Customers()
+        {
+            CustomerRepository r = new CustomerRepository();
+            List<Customer> customers = r.GetAll();
+            return View(customers);
+        }
+
+        public ActionResult Movies()
+        {
+            MovieRepository r = new MovieRepository();
+            List<Movie> movies = r.GetAll();
+            return View(movies);
+        }
+
+        public ActionResult MovieDetail(int id = 1)
+        {
+            ViewBag.id = id;
+            return View();
+        }
+
+        public ActionResult CustomerDetail(int id = 1)
+        {
+            ViewBag.id = id;
+            return View();
+        }
     }
 }
