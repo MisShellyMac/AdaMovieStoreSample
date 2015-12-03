@@ -1,46 +1,47 @@
-﻿using System;
+﻿using AdaMovieStoreSample.DataLayer;
+using AdaMovieStoreSample.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AdaMovieStoreSample.Models;
-using AdaMovieStoreSample.DataLayer;
 
 namespace AdaMovieStoreSample.Controllers
 {
-    public class MovieController : Controller
+    public class CustomerController : Controller
     {
-        // GET: Movie
+        // GET: Customer
         public ActionResult Index()
         {
-            using (MoviesController moviesController = new MoviesController())
+            using (CustomerController customerController = new CustomerController())
             {
-                IEnumerable<Movie> movies = moviesController.Get();
+                CustomerRepository r = new CustomerRepository();
+                List<Models.Customer> customers = r.GetAll();
                 return View();
-          
             }
         }
 
-        // GET: Movie/Details/5
+
+        public ActionResult Customers()
+        {
+            CustomerRepository r = new CustomerRepository();
+            List<Models.Customer> customers = r.GetAll();
+            return View(customers);
+        }
+
+        // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        public ActionResult Movies()
-        {
-            MovieRepository r = new MovieRepository();
-            List<Movie> movies = r.GetAll();
-            return View(movies);
-        }
-
-        // GET: Movie/Create
+        // GET: Customer/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Movie/Create
+        // POST: Customer/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -56,13 +57,13 @@ namespace AdaMovieStoreSample.Controllers
             }
         }
 
-        // GET: Movie/Edit/5
+        // GET: Customer/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Movie/Edit/5
+        // POST: Customer/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -78,13 +79,13 @@ namespace AdaMovieStoreSample.Controllers
             }
         }
 
-        // GET: Movie/Delete/5
+        // GET: Customer/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Movie/Delete/5
+        // POST: Customer/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace AdaMovieStoreSample.Controllers
 {
@@ -16,6 +17,18 @@ namespace AdaMovieStoreSample.Controllers
         {
             CustomerRepository r = new CustomerRepository();
             return r.GetAll();
+        }
+
+            public ActionResult Customers()
+        {
+            CustomerRepository r = new CustomerRepository();
+            List<Customer> customers = r.GetAll();
+            return View(customers);
+        }
+
+        private ActionResult View(List<Customer> customers)
+        {
+            throw new NotImplementedException();
         }
 
         // GET api/customers/5
