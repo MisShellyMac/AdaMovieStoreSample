@@ -13,25 +13,16 @@ namespace AdaMovieStoreSample.Controllers
         // GET: Movie
         public ActionResult Index()
         {
-            using (MoviesController moviesController = new MoviesController())
-            {
-                IEnumerable<Movie> movies = moviesController.Get();
-                return View();
-          
-            }
-        }
-
-        // GET: Movie/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        public ActionResult Movies()
-        {
             MovieRepository r = new MovieRepository();
             List<Movie> movies = r.GetAll();
             return View(movies);
+        }
+
+        // GET: Movie/Details/5
+        public ActionResult Details(int id = 1)
+        {
+            ViewBag.id = id;
+            return View();
         }
 
         // GET: Movie/Create

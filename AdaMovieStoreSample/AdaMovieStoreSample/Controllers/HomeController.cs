@@ -24,14 +24,6 @@ namespace AdaMovieStoreSample.Controllers
             return View(customers);
         }
 
-        public ActionResult Movies()
-        {
-            MovieRepository r = new MovieRepository();
-            List<Movie> movies = r.GetAll();
-            return View(movies);
-        }
-
-
         private ActionResult View(Func<ActionResult> addMovie)
         {
             throw new NotImplementedException();

@@ -1,10 +1,10 @@
-﻿using AdaMovieStoreSample.DataLayer;
-using AdaMovieStoreSample.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AdaMovieStoreSample.Models;
+using AdaMovieStoreSample.DataLayer;
 
 namespace AdaMovieStoreSample.Controllers
 {
@@ -13,24 +13,14 @@ namespace AdaMovieStoreSample.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            using (CustomerController customerController = new CustomerController())
-            {
-                CustomerRepository r = new CustomerRepository();
-                List<Models.Customer> customers = r.GetAll();
-                return View();
-            }
-        }
-
-
-        public ActionResult Customers()
-        {
             CustomerRepository r = new CustomerRepository();
-            List<Models.Customer> customers = r.GetAll();
+            List<Customer> customers = r.GetAll();
             return View(customers);
         }
 
-        // GET: Customer/Details/5
-        public ActionResult Details(int id)
+
+            // GET: Customer/Details/5
+            public ActionResult Details(int id)
         {
             return View();
         }
