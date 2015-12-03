@@ -14,7 +14,7 @@ namespace AdaMovieStoreSample.DataLayer
 {
     public class CustomerRepository
     {
-        private SqlConnection db = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFileName=C:\Users\Michelle\Source\Repos\AdaMovieStoreSample\AdaMovieStoreSample\AdaMovieStoreSample\App_Data\videoStore.mdf;Integrated Security=True");
+        private SqlConnection db = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFileName=C:\GitHub\AdaMovieStoreSample\AdaMovieStoreSample\AdaMovieStoreSample\App_Data\videoStore.mdf;Integrated Security=True");
 
         public List<Customer> GetAll()
         {

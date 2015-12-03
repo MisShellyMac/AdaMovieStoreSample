@@ -26,7 +26,7 @@ namespace AdaMovieStoreSample.Controllers
         }
 
         // POST api/movies
-        public void Post([FromBody]string value)
+        public void Post([FromBody]string title, [FromBody]string overview, [FromBody]string releaseDate, [FromBody]string inventory)
         {
         }
 
