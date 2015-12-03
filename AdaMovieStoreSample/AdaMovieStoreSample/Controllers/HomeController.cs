@@ -31,6 +31,12 @@ namespace AdaMovieStoreSample.Controllers
             return View(movies);
         }
 
+
+        private ActionResult View(Func<ActionResult> addMovie)
+        {
+            throw new NotImplementedException();
+        }
+
         public ActionResult MovieDetail(int id = 1)
         {
             ViewBag.id = id;

@@ -6,7 +6,7 @@
 }
 
 <h2>Movies</h2>
-
+<p><a class="btn btn-default" href="/movies/AddMovie">Add Movie</a></p>
 
 <table class="table">
     <tr>
@@ -28,7 +28,7 @@
     {
         <tr>
             <td>
-                <a href="/Home/MovieDetail?id=@item.Id">
+                <a href="/Movies/MovieDetail?id=@item.Id">
                     @Html.DisplayFor(modelItem => item.Title)
                 </a>
             </td>

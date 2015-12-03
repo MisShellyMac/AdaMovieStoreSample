@@ -132,7 +132,9 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Movies\" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -168,8 +170,9 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="api\testController.cs" />
-    <Compile Include="Controllers\CustomersController.cs" />
-    <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\API\CustomersController.cs" />
+    <Compile Include="Controllers\API\MoviesController.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DataLayer\CustomerRepository.cs" />
     <Compile Include="DataLayer\MovieRepository.cs" />
@@ -235,11 +238,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Customers.cshtml" />
-    <Content Include="Views\Home\MovieDetail.cshtml" />
+    <Content Include="Views\Customers\Customers.cshtml" />
+    <Content Include="Views\Movie\MovieDetail.cshtml" />
     <Content Include="Views\Shared\_ngLayout.cshtml" />
-    <Content Include="Views\Home\CustomerDetail.cshtml" />
-    <Content Include="Views\Home\Movies.cshtml" />
+    <Content Include="Views\Customers\CustomerDetail.cshtml" />
+    <Content Include="Views\Movie\Movies.cshtml" />
+    <Content Include="Views\Movie\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

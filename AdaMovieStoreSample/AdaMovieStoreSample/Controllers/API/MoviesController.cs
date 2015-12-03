@@ -11,6 +11,13 @@ namespace AdaMovieStoreSample.Controllers
 {
     public class MoviesController : ApiController
     {
+
+        public Movie AddMovie()
+        {
+            return new Movie();
+        }
+
+
         // GET api/movies
         public IEnumerable<Movie> Get()
         {
