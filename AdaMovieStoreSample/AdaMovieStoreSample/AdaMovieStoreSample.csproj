@@ -242,6 +242,7 @@
     <Content Include="Views\Movie\Index.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Movie\Create.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
