@@ -132,9 +132,7 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Customer\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -238,12 +236,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Customers\Customers.cshtml" />
+    <Content Include="Views\Customer\Customers.cshtml" />
     <Content Include="Views\Movie\Details.cshtml" />
     <Content Include="Views\Shared\_ngLayout.cshtml" />
-    <Content Include="Views\Customers\CustomerDetail.cshtml" />
+    <Content Include="Views\Customer\CustomerDetail.cshtml" />
     <Content Include="Views\Movie\Index.cshtml" />
-    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Movie\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

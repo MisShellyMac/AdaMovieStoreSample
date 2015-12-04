@@ -19,6 +19,11 @@ namespace AdaMovieStoreSample.Controllers
         }
 
 
+
+
+
+
+
             // GET: Customer/Details/5
             public ActionResult Details(int id)
         {
