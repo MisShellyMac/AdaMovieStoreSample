@@ -28,6 +28,12 @@ namespace AdaMovieStoreSample.Controllers
             return View();
         }
 
+        private ActionResult View(Func<int, ActionResult> details)
+        {
+            MovieRepository r = new MovieRepository();
+            return View(Details);
+        }
+
         // GET: Movie/Create
         public ActionResult Create()
         {
