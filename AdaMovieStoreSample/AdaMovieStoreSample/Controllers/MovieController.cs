@@ -5,11 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using AdaMovieStoreSample.Models;
 using AdaMovieStoreSample.DataLayer;
+using System.Data.SqlClient;
 
 namespace AdaMovieStoreSample.Controllers
 {
     public class MovieController : Controller
     {
+        public SqlConnection db { get; private set; }
+
         // GET: Movie
         public ActionResult Index()
         {
@@ -37,7 +40,14 @@ namespace AdaMovieStoreSample.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                Movie movie = new Movie();
+                movie.Inventory = int.Parse(collection.GetValue("Inventory").AttemptedValue.ToString());
+                movie.Overview = collection.GetValue("Overview").AttemptedValue.ToString();
+                movie.ReleaseDate = collection.GetValue("ReleaseDate").AttemptedValue.ToString();
+                movie.Title = collection.GetValue("Title").AttemptedValue.ToString();
+
+                MovieRepository r = new MovieRepository();
+                r.Add(movie);
 
                 return RedirectToAction("Index");
             }
