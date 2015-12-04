@@ -17,17 +17,5 @@ namespace AdaMovieStoreSample.Controllers
             return View();
         }
 
-        public ActionResult Customers()
-        {
-            CustomerRepository r = new CustomerRepository();
-            List<Customer> customers = r.GetAll();
-            return View(customers);
-        }
-
-        public ActionResult CustomerDetail(int id = 1)
-        {
-            ViewBag.id = id;
-            return View();
-        }
     }
 }
