@@ -92,7 +92,9 @@ namespace AdaMovieStoreSample.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                Customer movie = new Customer();
+                CustomerRepository r = new CustomerRepository();
+                r.Remove(id);
 
                 return RedirectToAction("Index");
             }

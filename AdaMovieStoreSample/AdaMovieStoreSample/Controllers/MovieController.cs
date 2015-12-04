@@ -75,7 +75,14 @@ namespace AdaMovieStoreSample.Controllers
         {
             try
             {
-                // TODO: Add update logic here
+                Movie movie = new Movie();
+                movie.Inventory = int.Parse(collection.GetValue("Inventory").AttemptedValue.ToString());
+                movie.Overview = collection.GetValue("Overview").AttemptedValue.ToString();
+                movie.ReleaseDate = collection.GetValue("ReleaseDate").AttemptedValue.ToString();
+                movie.Title = collection.GetValue("Title").AttemptedValue.ToString();
+
+                MovieRepository r = new MovieRepository();
+                r.Update(movie);
 
                 return RedirectToAction("Index");
             }
@@ -97,7 +104,9 @@ namespace AdaMovieStoreSample.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                Movie movie = new Movie();
+                MovieRepository r = new MovieRepository();
+                r.Remove(id);
 
                 return RedirectToAction("Index");
             }

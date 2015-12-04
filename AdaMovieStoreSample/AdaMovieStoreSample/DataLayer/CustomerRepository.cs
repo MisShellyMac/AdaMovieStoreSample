@@ -61,7 +61,17 @@ namespace AdaMovieStoreSample.DataLayer
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            db.Open();
+            try
+            {
+                SqlCommand command = new SqlCommand("delete from customers where id = @id", this.db);
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                db.Close();
+            }
         }
 
         public Customer GetFullCustomer(int id)

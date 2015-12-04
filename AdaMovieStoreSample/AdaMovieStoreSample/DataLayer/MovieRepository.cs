@@ -50,14 +50,40 @@ namespace AdaMovieStoreSample.DataLayer
             }
         }
 
-        public Movie Update(Movie movie)
+        public void Update(Movie movie)
         {
-            throw new NotImplementedException();
+            db.Open();
+            try
+            {
+                SqlCommand command = new SqlCommand(
+                    "update movies (title, overview, release_date, inventory) values (@title, @overview, @release_date, @inventory)",
+                    this.db);
+                command.Parameters.AddWithValue("@title", movie.Title);
+                command.Parameters.AddWithValue("@overview", movie.Overview);
+                command.Parameters.AddWithValue("@release_date", movie.ReleaseDate);
+                command.Parameters.AddWithValue("@inventory", movie.Inventory);
+
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                db.Close();
+            }
         }
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            db.Open();
+            try
+            {
+                SqlCommand command = new SqlCommand("delete from movies where id = @id", this.db);
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                db.Close();
+            }
         }
 
         public Movie GetFullMovie(int id)
