@@ -25,8 +25,9 @@ namespace AdaMovieStoreSample.Controllers
 
 
             // GET: Customer/Details/5
-            public ActionResult Details(int id)
+            public ActionResult Details(int id = 1)
         {
+            ViewBag.id = id;
             return View();
         }
 
