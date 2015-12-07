@@ -22,17 +22,14 @@ namespace AdaMovieStoreSample.Controllers
         }
 
         // GET: Movie/Details/5
-        public ActionResult Details(int id = 1)
-        {
-            ViewBag.id = id;
-            return View();
-        }
-
-        private ActionResult View(Func<int, ActionResult> details)
+        public ActionResult MovieDetail(int id = 1)
         {
             MovieRepository r = new MovieRepository();
-            return View(Details);
+            Movie movie = r.Find(id);
+            return View(movie);
         }
+
+
 
         // GET: Movie/Create
         public ActionResult Create()
@@ -66,7 +63,9 @@ namespace AdaMovieStoreSample.Controllers
         // GET: Movie/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            MovieRepository r = new MovieRepository();
+            Movie movie = r.Find(id);
+            return View(movie);
         }
 
         // POST: Movie/Edit/5
@@ -95,7 +94,9 @@ namespace AdaMovieStoreSample.Controllers
         // GET: Movie/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            MovieRepository r = new MovieRepository();
+            Movie movie = r.Find(id);
+            return View(movie);
         }
 
         // POST: Movie/Delete/5

@@ -18,11 +18,12 @@ namespace AdaMovieStoreSample.Controllers
             return View(customers);
         }
 
-        // GET: Customer/Details/5
-            public ActionResult Details(int id = 1)
+        // GET: Customer/CustDetail/5
+            public ActionResult CustDetail(int id = 1)
         {
-            ViewBag.id = id;
-            return View();
+            CustomerRepository r = new CustomerRepository();
+            Customer customers = r.Find(id);
+            return View(customers);
         }
 
         // GET: Customer/Create
@@ -61,7 +62,9 @@ namespace AdaMovieStoreSample.Controllers
         // GET: Customer/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            CustomerRepository r = new CustomerRepository();
+            Customer customers = r.Find(id);
+            return View(customers);
         }
 
         // POST: Customer/Edit/5
@@ -95,7 +98,9 @@ namespace AdaMovieStoreSample.Controllers
         // GET: Customer/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            CustomerRepository r = new CustomerRepository();
+            Customer customers = r.Find(id);
+            return View(customers);
         }
 
         // POST: Customer/Delete/5

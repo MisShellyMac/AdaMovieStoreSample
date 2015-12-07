@@ -35,7 +35,7 @@ namespace AdaMovieStoreSample.DataLayer
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "insert into movies (title, overview, release_date, inventory) values (@title, @overview, @release_date, @inventory)",
+                    "insert into movies (title, overview, releaseDate, inventory) values (@title, @overview, @release_date, @inventory)",
                     this.db);
                 command.Parameters.AddWithValue("@title", movie.Title);
                 command.Parameters.AddWithValue("@overview", movie.Overview);
@@ -56,7 +56,7 @@ namespace AdaMovieStoreSample.DataLayer
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "update movies set title=@title, overview=@overview, release_date=@release_date, inventory=@inventory where id = @id",
+                    "update movies set title=@title, overview=@overview, releaseDate=@release_date, inventory=@inventory where id = @id",
                     this.db);
                 command.Parameters.AddWithValue("@title", movie.Title);
                 command.Parameters.AddWithValue("@overview", movie.Overview);
