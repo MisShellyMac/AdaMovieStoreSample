@@ -55,7 +55,7 @@ namespace AdaMovieStoreSample.DataLayer
                 c.State = token["state"].Value<string>();
                 c.PostalCode = token["postal_code"].Value<string>();
                 c.Phone = token["phone"].Value<string>();
-                c.AccountCredit = token["account_credit"].Value<double>();
+                c.AccountCredit = token["account_credit"].Value<decimal>();
 
                 repository.Add(c);
             }

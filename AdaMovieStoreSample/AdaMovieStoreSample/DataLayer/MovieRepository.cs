@@ -56,13 +56,13 @@ namespace AdaMovieStoreSample.DataLayer
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "update movies (title, overview, release_date, inventory) values (@title, @overview, @release_date, @inventory)",
+                    "update movies set title=@title, overview=@overview, release_date=@release_date, inventory=@inventory where id = @id",
                     this.db);
                 command.Parameters.AddWithValue("@title", movie.Title);
                 command.Parameters.AddWithValue("@overview", movie.Overview);
                 command.Parameters.AddWithValue("@release_date", movie.ReleaseDate);
                 command.Parameters.AddWithValue("@inventory", movie.Inventory);
-
+                command.Parameters.AddWithValue("@id", movie.Id);
                 command.ExecuteNonQuery();
             }
             finally

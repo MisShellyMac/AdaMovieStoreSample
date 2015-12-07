@@ -45,7 +45,7 @@ namespace AdaMovieStoreSample.Controllers
                 customer.State = collection.GetValue("State").AttemptedValue.ToString();
                 customer.PostalCode = collection.GetValue("PostalCode").AttemptedValue.ToString();
                 customer.Phone = collection.GetValue("Phone").AttemptedValue.ToString();
-                customer.AccountCredit = double.Parse(collection.GetValue("AccountCredit").AttemptedValue.ToString());
+                customer.AccountCredit = decimal.Parse(collection.GetValue("AccountCredit").AttemptedValue.ToString());
 
                 CustomerRepository r = new CustomerRepository();
                 r.Add(customer);
@@ -70,7 +70,19 @@ namespace AdaMovieStoreSample.Controllers
         {
             try
             {
-                // TODO: Add update logic here
+                Customer customer = new Customer();
+                customer.Name = collection.GetValue("Name").AttemptedValue.ToString();
+                customer.RegisteredAt = collection.GetValue("RegisteredAt").AttemptedValue.ToString();
+                customer.Address = collection.GetValue("Address").AttemptedValue.ToString();
+                customer.City = collection.GetValue("City").AttemptedValue.ToString();
+                customer.State = collection.GetValue("State").AttemptedValue.ToString();
+                customer.PostalCode = collection.GetValue("PostalCode").AttemptedValue.ToString();
+                customer.Phone = collection.GetValue("Phone").AttemptedValue.ToString();
+                customer.AccountCredit = decimal.Parse(collection.GetValue("AccountCredit").AttemptedValue.ToString());
+                customer.Id = id;
+
+                CustomerRepository r = new CustomerRepository();
+                r.Update(customer);
 
                 return RedirectToAction("Index");
             }

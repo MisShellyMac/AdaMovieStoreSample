@@ -80,7 +80,7 @@ namespace AdaMovieStoreSample.Controllers
                 movie.Overview = collection.GetValue("Overview").AttemptedValue.ToString();
                 movie.ReleaseDate = collection.GetValue("ReleaseDate").AttemptedValue.ToString();
                 movie.Title = collection.GetValue("Title").AttemptedValue.ToString();
-
+                movie.Id = id;
                 MovieRepository r = new MovieRepository();
                 r.Update(movie);
 

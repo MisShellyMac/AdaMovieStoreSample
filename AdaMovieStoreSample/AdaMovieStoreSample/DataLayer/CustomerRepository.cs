@@ -35,7 +35,7 @@ namespace AdaMovieStoreSample.DataLayer
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "insert into customers (name, registered_at, address, city, state, postal_code, phone, account_credit) values (@name, @registered_at, @address, @city, @state, @postal_code, @phone, @account_credit)",
+                    "insert into customers (name, registeredAt, address, city, state, postalCode, phone, accountCredit) values (@name, @registered_at, @address, @city, @state, @postal_code, @phone, @account_credit)",
                     this.db);
                 command.Parameters.AddWithValue("@name", customer.Name);
                 command.Parameters.AddWithValue("@registered_at", customer.RegisteredAt);
@@ -54,9 +54,30 @@ namespace AdaMovieStoreSample.DataLayer
             }
         }
 
-        public Customer Update(Customer customer)
+        public void Update(Customer customer)
         {
-            throw new NotImplementedException();
+            db.Open();
+            try
+            {
+                SqlCommand command = new SqlCommand(
+                    "update customers set name=@name, registeredAt=@registered_at, address=@address, city=@city, state=@state, postalCode=@postal_code, phone=@phone, accountCredit=@account_credit where id=@id",
+                    this.db);
+                command.Parameters.AddWithValue("@name", customer.Name);
+                command.Parameters.AddWithValue("@registered_at", customer.RegisteredAt);
+                command.Parameters.AddWithValue("@address", customer.Address);
+                command.Parameters.AddWithValue("@city", customer.City);
+                command.Parameters.AddWithValue("@state", customer.State);
+                command.Parameters.AddWithValue("@postal_code", customer.PostalCode);
+                command.Parameters.AddWithValue("@phone", customer.Phone);
+                command.Parameters.AddWithValue("@account_credit", customer.AccountCredit);
+                command.Parameters.AddWithValue("@id", customer.Id);
+
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                db.Close();
+            }
         }
 
         public void Remove(int id)

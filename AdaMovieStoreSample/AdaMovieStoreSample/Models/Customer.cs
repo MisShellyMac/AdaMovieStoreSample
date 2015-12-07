@@ -16,6 +16,6 @@ namespace AdaMovieStoreSample.Models
         public string State { get; set; }
         public string PostalCode{ get; set; }
         public string Phone { get; set; }
-        public double AccountCredit { get; set; }
+        public decimal AccountCredit { get; set; }
     }
 }
