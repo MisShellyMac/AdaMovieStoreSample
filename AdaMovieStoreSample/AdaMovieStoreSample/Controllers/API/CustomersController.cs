@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace AdaMovieStoreSample.Controllers
 {
+    [System.Web.Mvc.Authorize]
     public class CustomersController : ApiController
     {
         // GET api/customers

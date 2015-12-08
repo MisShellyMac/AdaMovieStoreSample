@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace AdaMovieStoreSample.api
 {
+    [Authorize]
     public class testController : ApiController
     {
         // GET: api/test

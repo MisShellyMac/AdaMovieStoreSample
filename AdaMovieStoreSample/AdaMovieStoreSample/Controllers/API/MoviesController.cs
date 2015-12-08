@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace AdaMovieStoreSample.Controllers
 {
+    [Authorize]
     public class MoviesController : ApiController
     {
 
